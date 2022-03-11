@@ -19,54 +19,57 @@ fetch("https://hp-api.herokuapp.com/api/characters")
             let house = document.createElement("p")
 
             card.setAttribute('class', 'card')
-            mainDiv.appendChild(card)
+            for (let index = 0; index <= 24; index++) {
+                // ! Add data to the elements
+                if (ele.image != "") {
+                    mainDiv.appendChild(card)
 
-            // ! Add data to the elements
-            if (ele.image != "") {
-                img.src = ele.image;
-                card.appendChild(img)
+                    img.src = ele.image;
+                    card.appendChild(img)
+                    if (ele.name != "") {
+                        charName.textContent = ele.name
+                        card.appendChild(charName)
+
+                    }
+                    if (ele.actor != "") {
+                        realName.textContent = ele.actor
+                        card.appendChild(realName)
+
+                    }
+                    if (ele.gender != "") {
+                        gender.textContent = "Gender : " + ele.gender
+                        card.appendChild(gender)
+
+                    }
+                    if (ele.dateOfBirth != "") {
+                        dob.textContent = "Date Of Birth : " + ele.dateOfBirth;
+                        card.appendChild(dob)
+
+                    } else if (ele.yearOfBirth != "") {
+                        dob.textContent = "Year Of Birth : " + ele.yearOfBirth;
+                        card.appendChild(dob)
+
+                    }
+                    if (ele.wizard != "") {
+                        if (ele.wizard == true) {}
+                        wizard.textContent = "Wizard : Yes";
+                        card.appendChild(wizard)
+
+                    }
+                    if (ele.species != "") {
+                        species.textContent = "Species : " + ele.species
+                        card.appendChild(species)
+
+                    }
+                    if (ele.house != "") {
+                        house.textContent = "House : " + ele.house;
+                        card.appendChild(house)
+
+                    }
+                }
 
             }
-            if (ele.name != "") {
-                charName.textContent = ele.name
-                card.appendChild(charName)
 
-            }
-            if (ele.actor != "") {
-                realName.textContent = ele.actor
-                card.appendChild(realName)
-
-            }
-            if (ele.gender != "") {
-                gender.textContent = "Gender : " + ele.gender
-                card.appendChild(gender)
-
-            }
-            if (ele.dateOfBirth != "") {
-                dob.textContent = "Date Of Birth : " + ele.dateOfBirth;
-                card.appendChild(dob)
-
-            } else if (ele.yearOfBirth != "") {
-                dob.textContent = "Year Of Birth : " + ele.yearOfBirth;
-                card.appendChild(dob)
-
-            }
-            if (ele.wizard != "") {
-                if (ele.wizard == true) {}
-                wizard.textContent = "Wizard : Yes";
-                card.appendChild(wizard)
-
-            }
-            if (ele.species != "") {
-                species.textContent = "Species : " + ele.species
-                card.appendChild(species)
-
-            }
-            if (ele.house != "") {
-                house.textContent = "House : " + ele.house;
-                card.appendChild(house)
-
-            }
 
 
         });
