@@ -1,14 +1,11 @@
 let body = document.querySelector("body")
 let mainDiv = document.querySelector("#root")
-mainDiv.setAttribute('class', 'container')
 body.appendChild(mainDiv);
-fetch("http://hp-api.herokuapp.com/api/characters")
+fetch("https://hp-api.herokuapp.com/api/characters")
     .then((res) => {
         return res.json()
     }).then((data) => {
         data.forEach((ele) => {
-            // ! Variables
-            // let imageUrl = "image_link";
 
             // ! Create Elements
             let card = document.createElement("div")
@@ -20,7 +17,6 @@ fetch("http://hp-api.herokuapp.com/api/characters")
             let wizard = document.createElement("p")
             let species = document.createElement("p")
             let house = document.createElement("p")
-
 
             card.setAttribute('class', 'card')
             mainDiv.appendChild(card)
@@ -71,7 +67,6 @@ fetch("http://hp-api.herokuapp.com/api/characters")
                 card.appendChild(house)
 
             }
-            //! Append Elements to HTML 
 
 
         });
